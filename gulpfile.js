@@ -18,7 +18,12 @@ var paths = {
 
 gulp.task('connect', function () {
     connect.server({
-        root: ['demos'],
+        root: [
+            'demos',
+            'node_modules/jquery/dist',
+            'node_modules/jquery-mockjax/dist',
+            'node_modules/bootstrap/dist/css'
+        ],
         port: 9000,
         livereload: true
     });
@@ -30,13 +35,13 @@ gulp.task('scripts', function () {
         .pipe(concat('sa-article-survey.min.js'))
         .on('error', log) // Если есть ошибки, выводим и продолжаем
         .pipe(uglify())
-        .pipe(gulp.dest('./demos/scripts'))
+        .pipe(gulp.dest('./demos'))
         .pipe(connect.reload());
 });
 
 gulp.task('scripts-deploy', function () {
     return gulp.src(paths.scripts)
-        //.pipe(babel({presets: ['env']}))
+    //.pipe(babel({presets: ['env']}))
         .pipe(concat('sa-article-survey.min.js'))
         .pipe(uglify())
         .pipe(gulp.dest('./dist/js'));
@@ -48,7 +53,7 @@ gulp.task('styles', function () {
         .pipe(csscomb())
         .pipe(concat('sa-article-survey.min.css'))
         .pipe(csso())
-        .pipe(gulp.dest('./demos/styles'))
+        .pipe(gulp.dest('./demos'))
         .pipe(connect.reload());
 });
 

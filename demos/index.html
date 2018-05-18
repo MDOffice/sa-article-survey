@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" href="bootstrap.css">
+
+    <link rel="stylesheet" href="sa-article-survey.min.css">
+</head>
+<body>
+
+<div class="container">
+    <main class="py-md-3">
+        <div class="card">
+            <div class="card-header">
+                <h6 class="card-title">Article title</h6>
+            </div>
+            <div class="card-body">Article text</div>
+            <div class="card-footer">
+                <div class="AS" data-id="123" data-url="/survey"></div>
+            </div>
+        </div>
+
+        <div id="console"></div>
+    </main>
+</div>
+
+<script src="jquery.js"></script>
+<script src="jquery.mockjax.js"></script>
+
+<script src="sa-article-survey.min.js"></script>
+<script>
+    $.mockjax({
+        url: "/survey",
+        responseText: {ok: true},
+        response: function (settings) {
+            $('#console').append($('<div class="text-muted"/>').html('Request: ' + JSON.stringify(settings.data)));
+        }
+    });
+
+    $('.AS').SAArticleSurvey();
+</script>
+
+</body>
+</html>

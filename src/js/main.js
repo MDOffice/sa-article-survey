@@ -4,6 +4,10 @@
         defaults: {
             url: null,
             articleId: null,
+
+            buttonGroupClass: null,
+            buttonClass: 'btn btn-secondary',
+
             titleUseful: 'Была ли эта статья полезна?',
             titleThx: 'Благодарим за отзыв.',
             titleSor: 'Приносим извинения.',
@@ -98,14 +102,14 @@
         return '<div class="title">' + this.props.titleUseful + '</div>' +
             '<div class="how-improve">' + this.props.titleImprove + '</div>' +
 
-            '<div class="button-group">' +
-            '<button class="as-button btn btn-default" data-value="5" type="button">' + this.props.btnUseful + '</button>' +
-            ' <button class="as-button btn btn-default" data-value="1" type="button">' + this.props.btnNoUseful + '</button>' +
+            '<div class="' + this.props.buttonGroupClass + '">' +
+            '<button class="as-button ' + this.props.buttonClass + '" data-value="5" type="button">' + this.props.btnUseful + '</button>' +
+            ' <button class="as-button  ' + this.props.buttonClass + '" data-value="1" type="button">' + this.props.btnNoUseful + '</button>' +
             '</div>' +
 
-            '<form class="form-horizontal">' +
+            '<form>' +
             '<div class="form-group"><div class="col-xs-5"><textarea aria-label="' + this.props.titleImprove + '" class="form-control"></textarea></div></div>' +
-            '<button class="submit-button btn btn-default" type="button">' + this.props.btnSend + '</button>' +
+            '<button class="submit-button ' + this.props.buttonClass + '" type="button">' + this.props.btnSend + '</button>' +
             '</form>';
     };
 
@@ -114,7 +118,7 @@
      * @type {string}
      * @static
      */
-    SAArticleSurvey.version = '1.0.1';
+    SAArticleSurvey.version = '1.1.0';
 
 })
 (jQuery);
