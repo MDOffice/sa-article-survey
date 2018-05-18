@@ -5,8 +5,11 @@
             url: null,
             articleId: null,
 
-            buttonGroupClass: null,
+            titleClass: 'text-secondary',
+            improveClass: 'text-secondary',
             buttonClass: 'btn btn-secondary',
+            textareaContainer: 'form-group',
+            textareaClass: 'form-control',
 
             titleUseful: 'Была ли эта статья полезна?',
             titleThx: 'Благодарим за отзыв.',
@@ -66,7 +69,7 @@
             this.actionFinish()
         },
         setTitle: function (text) {
-            this.$element.find('.title').html(text);
+            this.$element.find('.as-title').html(text);
         },
 
         actionFinish: function () {
@@ -84,7 +87,7 @@
             this.$element.on('click', '.as-button', function () {
                 instance.setRating(Number($(this).attr('data-value')));
             });
-            this.$element.on('click', '.submit-button', function () {
+            this.$element.on('click', '.as-submit-button', function () {
                 var text = $(this.form).find('textarea').val();
                 if (text.trim() === '') {
                     alert(instance.props.titleNeedText);
@@ -99,17 +102,17 @@
     });
 
     SAArticleSurvey.prototype.template = function () {
-        return '<div class="title">' + this.props.titleUseful + '</div>' +
-            '<div class="how-improve">' + this.props.titleImprove + '</div>' +
+        return '<div class="as-title ' + this.props.titleClass + '">' + this.props.titleUseful + '</div>' +
+            '<div class="as-how-improve ' + this.props.improveClass + '">' + this.props.titleImprove + '</div>' +
 
-            '<div class="' + this.props.buttonGroupClass + '">' +
+            '<div class="as-button-group">' +
             '<button class="as-button ' + this.props.buttonClass + '" data-value="5" type="button">' + this.props.btnUseful + '</button>' +
-            ' <button class="as-button  ' + this.props.buttonClass + '" data-value="1" type="button">' + this.props.btnNoUseful + '</button>' +
+            ' <button class="as-button ' + this.props.buttonClass + '" data-value="1" type="button">' + this.props.btnNoUseful + '</button>' +
             '</div>' +
 
             '<form>' +
-            '<div class="form-group"><div class="col-xs-5"><textarea aria-label="' + this.props.titleImprove + '" class="form-control"></textarea></div></div>' +
-            '<button class="submit-button ' + this.props.buttonClass + '" type="button">' + this.props.btnSend + '</button>' +
+            '<div class="' + this.props.textareaContainer + '"><textarea aria-label="' + this.props.titleImprove + '" class="' + this.props.textareaClass + '"></textarea></div>' +
+            '<button class="as-submit-button ' + this.props.buttonClass + '" type="button">' + this.props.btnSend + '</button>' +
             '</form>';
     };
 
@@ -118,7 +121,7 @@
      * @type {string}
      * @static
      */
-    SAArticleSurvey.version = '1.1.0';
+    SAArticleSurvey.version = '1.2.0';
 
 })
 (jQuery);
