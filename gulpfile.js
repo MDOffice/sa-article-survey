@@ -19,7 +19,8 @@ var paths = {
 gulp.task('connect', function () {
     connect.server({
         root: [
-            'demos',
+            'demo',
+            'dist',
             'node_modules/jquery/dist',
             'node_modules/jquery-mockjax/dist',
             'node_modules/bootstrap/dist/css'
@@ -31,48 +32,31 @@ gulp.task('connect', function () {
 });
 
 gulp.task('scripts', function () {
-    gulp.src(paths.scripts)
-        .pipe(concat('sa-article-survey.min.js'))
-        .on('error', log) // Если есть ошибки, выводим и продолжаем
-        .pipe(uglify())
-        .pipe(gulp.dest('./demos'))
-        .pipe(connect.reload());
-});
-
-gulp.task('scripts-deploy', function () {
     return gulp.src(paths.scripts)
     //.pipe(babel({presets: ['env']}))
         .pipe(concat('sa-article-survey.min.js'))
         .pipe(uglify())
-        .pipe(gulp.dest('./dist/js'));
+        .pipe(gulp.dest('./dist/js'))
+        .pipe(connect.reload());
 });
 
 gulp.task('styles', function () {
     return gulp.src(paths.styles)
-        .on('error', log)
         .pipe(csscomb())
         .pipe(concat('sa-article-survey.min.css'))
         .pipe(csso())
-        .pipe(gulp.dest('./demos'))
+        .pipe(gulp.dest('./dist/css'))
         .pipe(connect.reload());
 });
 
-gulp.task('styles-deploy', function () {
-    return gulp.src(paths.styles)
-        .pipe(csscomb())
-        .pipe(concat('sa-article-survey.min.css'))
-        .pipe(csso())
-        .pipe(gulp.dest('./dist/css'));
-});
-
 gulp.task('clean', function () {
-    del(['dist']);
+    del(['dist/js/*', 'dist/css/*']);
 });
 
 // The default task (called when you run `gulp` from cli)
-gulp.task('default', ['connect', 'scripts', 'styles'], function () {
+gulp.task('default', ['clean', 'connect', 'scripts', 'styles'], function () {
     gulp.watch(paths.scripts, ['scripts']);
     gulp.watch(paths.styles, ['styles']);
 });
 
-gulp.task('deploy', ['scripts-deploy', 'styles-deploy']);
+gulp.task('build', ['clean', 'scripts', 'styles']);
