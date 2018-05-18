@@ -1,0 +1,26 @@
+.AS {
+    padding: 20px;
+}
+
+.AS .title {
+    color: #757575;
+    font-weight: 500;
+}
+
+.AS .how-improve {
+    color: #757575;
+    display: none;
+    margin-bottom: 10px;
+}
+
+.AS.rated:not(.submitted) .how-improve {
+    display: block
+}
+
+.AS:not(.rated) form,
+.AS.rated .as-button,
+.AS.submitted form,
+.AS.submitted .button-group,
+.AS.rated .button-group {
+    display: none;
+}

@@ -1,0 +1,38 @@
+{
+  "name": "sa-article-survey",
+  "version": "1.0.1",
+  "description": "",
+  "author": "Kelatev",
+  "license": "MIT",
+  "directories": {
+    "example": "demos"
+  },
+  "scripts": {
+    "build": "gulp default",
+    "deploy": "gulp deploy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kelatev/sa-article-survey.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kelatev/sa-article-survey/issues"
+  },
+  "homepage": "https://github.com/kelatev/sa-article-survey#readme",
+  "dependencies": {
+    "jquery": "^3.3.1"
+  },
+  "devDependencies": {
+    "babel-preset-env": "^1.7.0",
+    "del": "^3.0.0",
+    "fancy-log": "^1.3.2",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-connect": "^5.0.0",
+    "gulp-csscomb": "^3.0.8",
+    "gulp-csso": "^3.0.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^3.0.0"
+  }
+}
