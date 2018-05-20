@@ -1,8 +1,11 @@
 language: node_js
 sudo: false
+addons:
+    apt:
+      update: true
 node_js:
   - "6"
 before_script:
   - npm install -g gulp-cli
 install: npm install
-script: gulp deploy
+script: gulp build
