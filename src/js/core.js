@@ -5,6 +5,7 @@
             url: null,
             articleId: null,
 
+            containerClass: 'card-body',
             titleClass: 'text-secondary',
             improveClass: 'text-secondary',
             buttonClass: 'btn btn-secondary',
@@ -98,6 +99,7 @@
         },
         _render: function () {
             this.$element.html(this.template());
+            this.$element.addClass(this.props.containerClass);
         }
     });
 
