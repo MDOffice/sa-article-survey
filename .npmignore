@@ -1,8 +1,4 @@
 .github
-src
-.browserslistrc
 .editorconfig
 .eslintignore
-webpack.config.js
 .eslintrc.json
-tsconfig.json
