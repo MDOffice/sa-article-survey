@@ -3,9 +3,9 @@
         "outDir": "dist",
         "sourceMap": true,
         "noImplicitAny": true,
-        "module": "umd",//"target": "es5",
-        "target": "es6",//"module": "es6",
-        "jsx": "react"
+        "declaration": true,
+        "module": "umd",
+        "target": "es6"
     },
     "include": [
         "src/**/*"

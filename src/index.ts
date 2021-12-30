@@ -104,6 +104,7 @@ export default class SAArticleSurvey {
 
     protected handleEvents() {
         this.element.querySelector('.as-button').addEventListener('click', (ev) => {
+            // @ts-ignore
             this.setRating(Number(ev.target.getAttribute('data-value')));
         });
         this.element.querySelector('.as-submit-button').addEventListener('click', (ev) => {

@@ -1,6 +1,6 @@
 {
     "root": true,
-    "parser": "babel-eslint",
+    "parser": "@babel/eslint-parser",
     "env": {
         "browser": true,
         "es6": true
@@ -262,7 +262,6 @@
         "template-tag-spacing": "error",
         "unicode-bom": "error",
         "wrap-regex": "off",
-
         // ECMAScript 6
         "arrow-body-style": [
             "error",

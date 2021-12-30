@@ -1,12 +1,12 @@
 {
     "name": "sa-article-survey",
-    "version": "2.0.0",
+    "version": "2.0.1",
     "description": "",
     "author": "Kelatev",
     "license": "MIT",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
     "scripts": {
-        "dev": "webpack serve",
-        "start": "npm run dev",
         "build": "webpack --mode production"
     },
     "repository": {
@@ -18,26 +18,19 @@
     },
     "homepage": "https://github.com/kelatev/sa-article-survey#readme",
     "devDependencies": {
-        "@babel/core": "^7.12.10",
-        "@babel/parser": "^7.12.11",
-        "@babel/preset-env": "^7.12.11",
-        "@babel/preset-typescript": "^7.12.7",
-        "@babel/types": "^7.12.11",
-        "babel-eslint": "^10.1.0",
-        "babel-loader": "^8.2.2",
-        "css-loader": "^5.0.1",
+        "css-loader": "^6.5.1",
         "css-minimizer-webpack-plugin": "^3.3.1",
-        "eslint": "^7.16.0",
+        "eslint": "^8.5.0",
         "file-loader": "^6.2.0",
         "jquery-mockjax": "^2.3.0",
-        "mini-css-extract-plugin": "^1.6.0",
+        "mini-css-extract-plugin": "^2.4.5",
         "path": "^0.12.7",
-        "source-map-loader": "^2.0.1",
+        "source-map-loader": "^3.0.0",
         "terser-webpack-plugin": "^5.3.0",
         "ts-loader": "^9.1.1",
         "typescript": "^4.1.3",
         "webpack": "^5.11.0",
         "webpack-cli": "^4.2.0",
-        "webpack-dev-server": "^3.11.0"
+        "webpack-dev-server": "^4.7.2"
     }
 }

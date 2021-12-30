@@ -9,10 +9,7 @@ module.exports = {
 
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'main.js',
-        library: 'SAArticleSurvey',
-        libraryTarget: 'umd',
-        umdNamedDefine: true
+        filename: 'index.js'
     },
 
     optimization: {
@@ -42,7 +39,7 @@ module.exports = {
             {
                 test: /\.(ts|js)x?$/,
                 exclude: /node_modules/,
-                use: 'babel-loader?cacheDirectory=true'
+                use: 'ts-loader'
             },
             {
                 test: /\.css$/,
@@ -56,18 +53,7 @@ module.exports = {
 
     plugins: [
         new MiniCssExtractPlugin({
-            filename: './main.css'
+            filename: './index.css'
         }),
-    ],
-
-    devServer: {
-        contentBase: [
-            path.join(__dirname, 'examples'),
-            path.join(__dirname, 'dist')
-        ],
-        compress: true,
-        progress: true,
-        open: true,
-        port: 9000
-    }
+    ]
 };
