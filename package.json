@@ -1,7 +1,6 @@
 {
     "name": "@kelatev/sa-article-survey",
-    "version": "2.0.3",
-    "description": "",
+    "version": "2.0.4",
     "author": "Kelatev",
     "license": "MIT",
     "main": "dist/index.js",
@@ -12,12 +11,12 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/kelatev/SA-Article-Survey.git"
+        "url": "git@github.com:kelatev/sa-article-survey.git"
     },
     "bugs": {
-        "url": "https://github.com/kelatev/SA-Article-Survey/issues"
+        "url": "https://github.com/kelatev/sa-article-survey/issues"
     },
-    "homepage": "https://github.com/kelatev/SA-Article-Survey#readme",
+    "homepage": "https://github.com/kelatev/sa-article-survey#readme",
     "devDependencies": {
         "css-loader": "^6.5.1",
         "css-minimizer-webpack-plugin": "^3.3.1",
