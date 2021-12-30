@@ -1,6 +1,6 @@
 {
     "name": "@kelatev/sa-article-survey",
-    "version": "2.0.6",
+    "version": "2.0.7",
     "author": "Kelatev",
     "license": "MIT",
     "main": "dist/index.js",
