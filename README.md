@@ -1,4 +1,4 @@
-# SA-Article-Survey &middot; ![npm](https://img.shields.io/npm/v/@mdoffice/sa-filter) ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/MDOffice/SA-Filter)
+# SA-Article-Survey &middot; ![npm](https://img.shields.io/npm/v/@mdoffice/sa-article-survey) ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/MDOffice/sa-article-survey)
 
 UI component for article grading
 
